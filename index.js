@@ -20,7 +20,7 @@
 
       if (topResult.className === 'iguana') {
 
-        console.log('OMG llama!', topResult);
+        console.log('OMG iguana!', topResult);
         document.body.classList.add('llama');
 
         audio.play(); // "Llama!"
@@ -31,7 +31,14 @@
         document.body.classList.add('badger');        
         document.body.classList.remove('llama');
 
-      } else {
+      } else if (topResult.className === 'llama') {
+
+        // Just a little easter egg ;-)
+        document.body.classList.add('badger');        
+        document.body.classList.remove('llama');
+
+      } 
+      else {
 
         console.log('No llama...', predictions);
         document.body.classList.remove('llama', 'badger');
