@@ -17,21 +17,22 @@
       const predictions = await predictionModel.classify(video);
 
       const topResult = predictions[0];
+      var result = topResult.className;
 
-      if (topResult.className === 'common iguana, iguana, Iguana iguana') {
+      if (result.includes("iguana")) {
 
         console.log('OMG iguana!', topResult);
         document.body.classList.add('llama');
 
         audio.play(); // "Llama!"
 
-      } else if (topResult.className === 'badger') {
+      } else if (result.includes("badger")) {
 
         // Just a little easter egg ;-)
         document.body.classList.add('badger');        
         document.body.classList.remove('llama');
 
-      } else if (topResult.className === 'llama') {
+      } else if (result.includes("llama")) {
 
         // Just a little easter egg ;-)
         document.body.classList.add('badger');        
