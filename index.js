@@ -18,7 +18,7 @@
 
       const topResult = predictions[0];
 
-      if (topResult.className === 'iguana') {
+      if (topResult.className === 'common iguana, iguana, Iguana iguana') {
 
         console.log('OMG iguana!', topResult);
         document.body.classList.add('llama');
